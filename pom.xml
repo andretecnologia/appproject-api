@@ -17,16 +17,16 @@
 	<properties>
 		<java.version>11</java.version>
 		<sonar.exclusions>
-			**/entity/**,
-			**/form/**,
-			**/sample/**,
-			**/dto/**,
-			**/adapter/**,
+			**/advice/**,
+			**/exception/**,
+			**/models/**,
+			**/payload/**,
+			**/repository/**,
 			**/event/**,
 			**/config/**,
-			**/MarvelApiApplication*,
-			**/HomeController.*,
-			**/ServletConfig.*
+			**/ProjectApplicationTests*,
+			**/security.*,
+			**/scripts.*
 		</sonar.exclusions>
 	</properties>
 
