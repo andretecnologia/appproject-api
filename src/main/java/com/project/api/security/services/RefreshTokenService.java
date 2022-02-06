@@ -2,6 +2,7 @@ package com.project.api.security.services;
 
 import com.project.api.exception.TokenRefreshException;
 import com.project.api.models.RefreshToken;
+import com.project.api.models.User;
 import com.project.api.repository.RefreshTokenRepository;
 import com.project.api.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +29,10 @@ public class RefreshTokenService {
     return refreshTokenRepository.findByToken(token);
   }
 
-  public RefreshToken createRefreshToken(Long userId) {
+  public RefreshToken createRefreshToken(UUID userId) {
     RefreshToken refreshToken = new RefreshToken();
 
-    refreshToken.setUser(userRepository.findById(userId).get());
+    refreshToken.setUser(userRepository.findById(userId));
     refreshToken.setExpiryDate(Instant.now().plusMillis(refreshTokenDurationMs));
     refreshToken.setToken(UUID.randomUUID().toString());
 

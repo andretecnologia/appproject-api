@@ -2,12 +2,13 @@ package com.project.api.models;
 
 import javax.persistence.*;
 import java.time.Instant;
+import java.util.UUID;
 
 @Entity(name = "refreshtoken")
 public class RefreshToken {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private long id;
+  @GeneratedValue(generator = "UUID")
+  private UUID id;
 
   @OneToOne
   @JoinColumn(name = "user_id", referencedColumnName = "id")
@@ -22,11 +23,11 @@ public class RefreshToken {
   public RefreshToken() {
   }
 
-  public long getId() {
+  public UUID getId() {
     return id;
   }
 
-  public void setId(long id) {
+  public void setId(UUID id) {
     this.id = id;
   }
 

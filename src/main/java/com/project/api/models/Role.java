@@ -1,13 +1,14 @@
 package com.project.api.models;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
 @Table(name = "roles")
 public class Role {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	@GeneratedValue(generator = "UUID")
+	private UUID id;
 
 	@Enumerated(EnumType.STRING)
 	@Column(length = 20)
@@ -21,11 +22,11 @@ public class Role {
 		this.name = name;
 	}
 
-	public Integer getId() {
+	public UUID getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(UUID id) {
 		this.id = id;
 	}
 
