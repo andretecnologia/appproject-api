@@ -4,7 +4,7 @@ DROP EXTENSION IF EXISTS "uuid-ossp";
 CREATE EXTENSION "uuid-ossp" SCHEMA public;
 
 CREATE TABLE IF NOT EXISTS refreshtoken  (
-	id         	int8 NOT NULL,
+	id uuid NOT NULL DEFAULT uuid_generate_v4(),
 	expiry_date	timestamp NOT NULL,
 	token      	varchar(255) NOT NULL,
 	user_id  uuid NOT NULL DEFAULT uuid_generate_v4(),

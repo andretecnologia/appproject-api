@@ -1,9 +1,11 @@
 package com.project.api.payload.request;
 
-public class LogOutRequest {
-  private Long userId;
+import java.util.UUID;
 
-  public Long getUserId() {
+public class LogOutRequest {
+  private UUID userId;
+
+  public UUID getUserId() {
     return this.userId;
   }
 }
