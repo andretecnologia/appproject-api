@@ -1,6 +1,6 @@
 FROM adoptopenjdk/openjdk11:alpine
 ARG PORT=8080
-ARG JAR_FILE=target/api-0.1.0.jar
+ARG JAR_FILE=target/*.jar
 VOLUME [ "/data" ]
 EXPOSE ${PORT}
 COPY ${JAR_FILE} /api/application/api.jar
