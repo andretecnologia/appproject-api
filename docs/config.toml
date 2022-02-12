@@ -1,0 +1,25 @@
+baseURL = 'https://andretecnologia.github.io/docs'
+languageCode = 'en-us'
+title = 'API Docs'
+theme = 'beautifulhugo'
+pluralizelisttitles = false
+[Params.social.share]
+  facebook = true
+  linkedin = true
+  twitter = true
+  whatsapp = true
+  email = true
+[menu]
+[[menu.main]]
+  identifier = 'about'
+  name = 'about'
+  pre = "<i class='fa fa-heart'></i>"
+  url = 'about/'
+  weight = -110
+[[menu.main]]
+  name = 'getting started'
+  identifier = 'getting started'
+  post = "<span class='alert'>New!</span>"
+  pre = "<i class='fa fa-road'></i>"
+  url = 'getting-started/'
+  weight = -100
